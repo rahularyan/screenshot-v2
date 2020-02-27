@@ -1,4 +1,5 @@
 const chrome = require('chrome-aws-lambda');
+//const puppeteer = require('puppeteer');
 const puppeteer = require('puppeteer-core');
 
 async function getScreenshot(url, type, quality, fullPage) {
@@ -10,7 +11,7 @@ async function getScreenshot(url, type, quality, fullPage) {
 
     const page = await browser.newPage();
     await page.goto(url);
-    const file = await page.screenshot({ type,  quality, fullPage });
+    const file = await page.screenshot({ type, quality, fullPage });
     await browser.close();
     return file;
 }

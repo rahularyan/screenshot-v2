@@ -11,10 +11,13 @@
     "service"
   ],
   "author": "styfle",
-  "repository": "github:styfle/screenshot-v2",
+  "repository": "github:rahularyan/screenshot-v2",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "1.11.1",
-    "puppeteer-core": "1.11.0"
+    "chrome-aws-lambda": "^2.1.1",
+    "puppeteer-core": "^2.1.1"
+  },
+  "devDependencies": {
+    "puppeteer": "^2.1.1"
   }
 }
