@@ -4,9 +4,10 @@ const { getInt, getUrlFromPath, isValidUrl } = require('./validator');
 
 module.exports = async function (req, res) {
     try {
-        const { pathname = '/', query = {} } = parse(req.url, true);
-        const { type = 'png', quality, fullPage } = query;
-        const url = getUrlFromPath(pathname);
+        const { query = {} } = parse(req.url, true);
+        const { url, type = 'png', quality, fullPage } = query;
+        if (!url)
+            return
         const qual = getInt(quality);
         if (!isValidUrl(url)) {
             res.statusCode = 400;
